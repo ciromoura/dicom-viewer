@@ -1,0 +1,218 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+  }
+  
+  .main-container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+  }
+
+  /* Área do visualizador (80%) */
+  .viewer-container {
+    flex: 0 0 80%;
+    height: 100vh;
+    background-color: #000;
+    position: relative;
+  }
+
+  #dicomImage {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    outline: none;
+    touch-action: none; /* Importante para o funcionamento correto das ferramentas */
+  }
+
+  /* Painel lateral (20%) */
+  .sidebar {
+    flex: 0 0 20%;
+    height: 100vh;
+    background-color: white;
+    padding: 20px;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .header {
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    margin: 0 0 20px 0;
+    font-size: 24px;
+    color: #333;
+  }
+
+  .button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+
+  .button:hover {
+    background-color: #45a049;
+  }
+
+  .button.secondary {
+    background-color: #2196F3;
+  }
+
+  .button.secondary:hover {
+    background-color: #1976D2;
+  }
+
+  .instructions {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #666;
+  }
+
+  .instructions h2 {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    color: #333;
+  }
+
+  .instructions ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+
+  .instructions li {
+    margin-bottom: 5px;
+  }
+
+  .image-info {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 4px;
+  }
+
+  .image-info h2 {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    color: #333;
+  }
+
+  #seriesList {
+    max-height: 300px;
+    overflow-y: auto;
+    margin-top: 10px;
+  }
+
+  .series-item {
+    padding: 8px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+  }
+
+  .series-item:hover {
+    background-color: #f0f0f0;
+  }
+
+  .series-item.active {
+    background-color: #e3f2fd;
+  }
+
+  /* Estilo para o loading */
+  .loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 18px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 8px;
+    display: none;
+  }
+
+  /* Estilos específicos para as ferramentas do Cornerstone */
+  .cornerstone-element-disabled {
+    display: none;
+  }
+
+  .cornerstone-element-enabled {
+    width: 100%;
+    height: 100%;
+  }
+
+  .tools-section {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 4px;
+  }
+
+  .tools-section h2 {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    color: #333;
+  }
+
+  .tools-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .tool-button {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    color: #495057;
+    padding: 8px;
+    text-align: center;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  .tool-button:hover {
+    background-color: #e9ecef;
+    border-color: #ced4da;
+  }
+
+  .tool-button.active {
+    background-color: #e3f2fd;
+    border-color: #90caf9;
+    color: #1976d2;
+  }
+  

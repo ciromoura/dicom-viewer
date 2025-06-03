@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self' blob: data:; script-src 'self' 'unsafe-eval' 'unsafe-inline'; worker-src blob:"
+    />
+    <meta
+      http-equiv="X-Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <title>DICOM Viewer</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="main-container">
+      <!-- Área do visualizador (80%) -->
+      <div class="viewer-container">
+        <div id="dicomImage" data-index="0" oncontextmenu="return false">
+        </div>
+        <div class="loading">Loading...</div>
+      </div>
+
+      <!-- Painel lateral (20%) -->
+      <div class="sidebar">
+        <div class="header">
+          <h1>DICOM Viewer</h1>
+        </div>
+
+        <div class="button-group">
+          <button id="loadSingleButton" class="button">Load Single Image</button>
+          <button id="loadSeriesButton" class="button secondary">Load Image Series</button>
+        </div>
+
+        <div class="tools-section">
+          <h2>Tools</h2>
+          <div id="toolsContainer" class="tools-container"></div>
+        </div>
+
+        <div class="image-info">
+          <h2>Image Information</h2>
+          <div id="imageInfo">No image loaded</div>
+          <div id="seriesList"></div>
+        </div>
+
+        <div class="instructions">
+          <h2>Controls</h2>
+          <ul>
+            <li><strong>Left Click:</strong> Use selected tool</li>
+            <li><strong>Middle Click + Drag:</strong> Pan</li>
+            <li><strong>Right Click + Drag:</strong> Zoom</li>
+            <li><strong>Mouse Wheel:</strong> Scroll through series</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script src="./renderer.js"></script>
+  </body>
+</html>
